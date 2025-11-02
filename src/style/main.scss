@@ -1,0 +1,70 @@
+@use "sass:color";
+
+$bootstrap-icons-font-dir: "bootstrap-icons/font/fonts";
+@import "bootstrap-icons/font/bootstrap-icons";
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+$background-color: #0d001a;
+
+$base-rounding: 0.5rem;
+$base-padding: 0.25rem;
+
+$window-highlight: #6ceded;
+$window-base: #6cb9c9;
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #3f5efb;
+  background: radial-gradient(
+    circle,
+    color.scale($background-color, $lightness: 10%) 0%,
+    $background-color 100%
+  );
+}
+
+.window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    height: 1.5rem;
+    width: 36rem;
+    background: $window-base;
+    border-top: $window-highlight solid 2px;
+    border-top-left-radius: $base-rounding;
+    border-top-right-radius: $base-rounding;
+    &-title {
+      height: 100%;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      p {
+        font-size: 12px;
+        font-family: "Roboto Mono", monospace;
+      }
+    }
+    &-buttons {
+      button,
+      .button {
+        height: 100%;
+        &:last-child {
+          border-top-right-radius: $base-rounding;
+        }
+      }
+    }
+  }
+}

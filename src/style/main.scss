@@ -1,0 +1,15 @@
+@use "sass:color";
+@import 'bulma/css/bulma.css';
+
+.navbar {
+  width: 2rem;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+
+  .button {
+    width: 100%;
+    padding: 0;
+    aspect-ratio: 1;
+  }
+}
